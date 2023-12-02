@@ -1,8 +1,8 @@
 # Curtir.ME
-Bem-vindo ao Curtir.ME, uma inovadora rede social desenvolvida por entusiastas do C++!
+Bem-vindo ao Curtir.ME, a inovadora rede social criada por alunos entusiastas do C++! Aqui, acreditamos na liberdade de expressão, permitindo que você mostre sua apreciação pelas postagens sem limites. Vamos explorar juntos uma nova forma de se conectar online!
 
 ### Que é o Curtir.ME?
-O Curtir.ME não é apenas mais uma rede social, é uma revolução na forma como expressamos nosso apreço online. Enquanto outras plataformas impõem limites às suas curtidas, restringindo a quantidade de amor que você pode demonstrar, no Curtir.ME acreditamos que suas curtidas são ilimitadas para que você possa mostrar o quanto gosta de suas publicações, sem restrições! Adicione postagens, siga pessoas e crie amizades.
+O Curtir.ME não é apenas mais uma rede social, é uma revolução na forma como expressamos nosso apreço online. Enquanto outras plataformas impõem limites às suas curtidas, restringindo a quantidade de apreciação que você pode demonstrar, no Curtir.ME acreditamos que suas curtidas são ilimitadas para que você possa mostrar o quanto gosta de suas publicações, sem restrições! Adicione postagens, siga pessoas e crie amizades.
 
 ### Principais Recursos
 Curtidas Ilimitadas: Expresse-se sem limites! Curta quantas postagens quiser, sem se preocupar com restrições arbitrárias.
