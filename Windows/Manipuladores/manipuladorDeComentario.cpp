@@ -8,7 +8,7 @@
 
 /**
 *@brief Método que cria todos os documentos nescessarios para o funcionamento da classe manipuladorDeComentario
-*Está função têm como objetivo abrir o arquivo binários (comentarios.bin) importante para a aplicação.
+*Está função têm como objetivo abrir o arquivo binários (comentarios.bin) importante para a aplicação. Este Documento guarda todos os comentários existentes na aplicação.
 */
 void manipuladorDeComentario::criaArquivosNescessarios(){
 
@@ -27,7 +27,7 @@ void manipuladorDeComentario::criaArquivosNescessarios(){
 }
 
 /**@brief Método que adiciona um comentário no arquivo binário comentarios.bin
-*Este método recebe um comentário, abre o arquivo de comentarios e adiciona o comentário recebido na ultima posição do arquivo
+*Este método recebe um comentário, abre o arquivo de comentarios e adiciona o comentário recebido na ultima posição do arquivo.
 *@param coment recebe um objeto do tipo Comentario
 *@return Valor booleano, retorna true caso tenha sido adicionado com sucesso e false se não
 */
@@ -85,7 +85,7 @@ void manipuladorDeComentario::exibirComentariosPorId(int idPost, int quantidade)
 }
 
 /**@brief Método que exibe um comentário
-*Este método recebe um comentário, e exibe ele em um formato especial
+*Este método recebe um comentário, e exibe ele em um formato especial para comentários, de modo que diferencie da postagem
 *@param coment recebe um objeto do tipo Comentario
 */
 void manipuladorDeComentario::printaComentario(Comentario coment){

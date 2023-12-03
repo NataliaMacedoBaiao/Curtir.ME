@@ -8,7 +8,7 @@
 /**
 *@brief Método que cria todos os documentos nescessarios para o funcionamento das postagens
 *Está função têm como objetivo abrir 2 arquivos binários importantes para a aplicação sendo eles o arquivo numeroDePostagensCadastradas.bin (Detém o numero de postagens da aplicação)
-* e o outro sendo postagens.bin (Guarda as postagens da aplicação).
+* e o outro sendo postagens.bin (Guarda todas as postagens da aplicação).
 */
 void manipuladorDePostagem::criaArquivosNescessarios(){
     //Arquivo de numero de postagens cadastrados
@@ -40,8 +40,9 @@ void manipuladorDePostagem::criaArquivosNescessarios(){
 }
 
 /**@brief Método que exibe no console todas as postagens dos seguidos do usuário
-*Este método abre o arquivo de postagens e analisa se o usuário cujo o id é igual ao recebido segue, se segue a postagem encontrada é exibida no console, ele se relaciona com a classe manipuladorDeUsuario
-* e manipuladorDeComentario.
+*Este método abre o arquivo de postagens e analisa se o usuário cujo o id é igual ao recebido segue o postador de algumas
+* postagem, se segue a postagem encontrada é exibida no console, ele se relaciona com a classe manipuladorDeUsuario (Para manipular os usuários e verificar se se seguem)
+* e manipuladorDeComentario (Para exibir os comentários da postagem).
 *@param idUsuarioAtual recebe o id do usuário cujo o feed de seguidores deve ser baseado
 */
 void manipuladorDePostagem::mostrarFeedDosSeguidos(int idUsuarioAtual){
@@ -85,9 +86,9 @@ void manipuladorDePostagem::mostrarFeedDosSeguidos(int idUsuarioAtual){
 
 }
 
-/**@brief Método que exibe no console todas as postagens do sistema independente de hashtag ou de seguidores começando da mais antiga até a mais atual
-*Este método abre o arquivo de postagens e percorre exibindo cada postagem no console, ele se relaciona com a classe manipuladorDeUsuario
-* e manipuladorDeComentario. São exibidos 2 comentários por postagem.
+/**@brief Método que exibe no console todas as postagens do sistema independente de hashtag ou de seguidores
+*Este método abre o arquivo de postagens e percorre exibindo cada postagem no console começando da mais antiga até a mais atual, ele se relaciona com a classe manipuladorDeUsuario
+* e manipuladorDeComentario(Para exibir os comentários da postagem). São exibidos 2 comentários por postagem.
 */
 void manipuladorDePostagem::mostrarFeed(){
 
@@ -153,7 +154,7 @@ void manipuladorDePostagem::mostrarFeedPorHashtag(char hashtag[]){
 
                 post.hashtag.Getexiste() ? cout << "       " << post.hashtag.Gethashtag() << endl : cout << "";
 
-                cout << "       Conteudo: " << post.Getconteudo()<< endl;
+                cout << "       Conteúdo: " << post.Getconteudo()<< endl;
                 cout << "       " << post.Getcurtidas() << "    ";
 
                 if(post.Getcurtidas() == 1){
@@ -177,7 +178,7 @@ void manipuladorDePostagem::mostrarFeedPorHashtag(char hashtag[]){
 
 /**@brief Método que exibe no console uma postagem determinada com todos seus comentários
 *Este método abre o arquivo de postagens e analisa se a postagem  detém o numero de postagem igual a recebida, se sim a postagem encontrada é exibida no console, ele se relaciona com a classe manipuladorDeUsuario
-* e manipuladorDeComentario, neste caso todos os cometários são exibidos.
+* e manipuladorDeComentario(Para exibir os comentários da postagem), neste caso todos os cometários são exibidos.
 *@param numeroDaPostagem recebe um inteiro, que referencia ao numero da postagem procurada
 */
 void manipuladorDePostagem::detalhar(int numeroPostagem){
@@ -290,7 +291,7 @@ bool manipuladorDePostagem::apagarPostagem(int numeroPostagem){
 }
 
 /**@brief Método que aumenta o numero de postagens no sistema
-*Este método abre o arquivo numeroDePostagensCadastradas.bin faz a leitura soma mais um e substitui no arquivo
+*Este método abre o arquivo numeroDePostagensCadastradas.bin faz a leitura, soma mais um e substitui no arquivo
 *@see numeroDePostagens()
 *@return valor booleano, true se foi adicionado com sucesso e false se não foi
 */
@@ -365,7 +366,7 @@ Postagem manipuladorDePostagem::buscaPostagem(int numeroPostagem){
     Postagem vazio;
 
     if (!arquivo.is_open()) {
-        geraExcecao("Erro ao abrir o arquivo de usuários.");
+        geraExcecao("Erro ao abrir o arquivo de usuarios.");
         return vazio;
     }else{
 

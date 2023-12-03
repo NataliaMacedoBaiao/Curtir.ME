@@ -520,7 +520,7 @@ void printaMenuFeedPostagens(){
                     break;
                 case 2: // Adiciona um comentário a uma postagem escolhida
                         cout << "Qual o Id da postagem que voce deseja comentar: ";
-                        scanf("%d", &IDpostagem);
+                        IDpostagem = lerInteiro();
                         limpaEntrada();
                         cout << "Digite o comentario: " << endl;
                         fgets(textoComentario, tamanhoTextoComentarios, stdin);
@@ -541,7 +541,7 @@ void printaMenuFeedPostagens(){
                     break;
                 case 3: // Mostra uma postagem com seus comentários
                         cout << "Qual o Id da postagem que voce deseja detalhar: ";
-                        scanf("%d", &IDpostagem);
+                        IDpostagem = lerInteiro();
                         limpaEntrada();
 
                         try{

@@ -8,7 +8,7 @@
 
 /**
 *@brief Método que cria todos os documentos nescessarios para o funcionamento da classe manipuladorDeComentario
-*Está função têm como objetivo abrir o arquivo binários (comentarios.bin) importante para a aplicação.
+*Está função têm como objetivo abrir o arquivo binários (comentarios.bin) importante para a aplicação. Este Documento guarda todos os comentários existentes na aplicação.
 */
 void manipuladorDeComentario::criaArquivosNescessarios(){
 
@@ -17,17 +17,17 @@ void manipuladorDeComentario::criaArquivosNescessarios(){
     if (!ifs2) { //Verifica se Existe o Arquivo
         ofstream arquivo("Arquivos/comentarios.bin", ios::binary | ios::app);
         if (!arquivo.is_open()) {
-            geraExcecao("Erro ao criar o arquivo de comentários.");
+            geraExcecao("Erro ao criar o arquivo de comentarios.");
 
             return;
         }
-        cout << "Arquivo de comentários criado\n";
+        cout << "Arquivo de comentarios criado\n";
         arquivo.close();
     }
 }
 
 /**@brief Método que adiciona um comentário no arquivo binário comentarios.bin
-*Este método recebe um comentário, abre o arquivo de comentarios e adiciona o comentário recebido na ultima posição do arquivo
+*Este método recebe um comentário, abre o arquivo de comentarios e adiciona o comentário recebido na ultima posição do arquivo.
 *@param coment recebe um objeto do tipo Comentario
 *@return Valor booleano, retorna true caso tenha sido adicionado com sucesso e false se não
 */
@@ -42,7 +42,7 @@ bool manipuladorDeComentario::adicionaAoArquivo(Comentario coment){
     arquivo.write((char*)&coment, sizeof(Comentario));
     arquivo.close();
 
-    cout << "Comentário adicionado." << endl;
+    cout << "Comentario adicionado." << endl;
 
     return true;
 }
@@ -59,7 +59,7 @@ void manipuladorDeComentario::exibirComentariosPorId(int idPost, int quantidade)
     Comentario coment;
 
     if (!arquivo.is_open()) {
-        geraExcecao("Erro ao abrir o arquivo de comentários.");
+        geraExcecao("Erro ao abrir o arquivo de comentarios.");
     }else{
 
         while (arquivo.read((char*)&coment, sizeof(Comentario))) {
@@ -79,13 +79,13 @@ void manipuladorDeComentario::exibirComentariosPorId(int idPost, int quantidade)
     }
 
     if(i == 0){
-        cout << "\n                 Nenhum comentário!\n" << endl;
+        cout << "\n                 Nenhum comentario!\n" << endl;
     }
 
 }
 
 /**@brief Método que exibe um comentário
-*Este método recebe um comentário, e exibe ele em um formato especial
+*Este método recebe um comentário, e exibe ele em um formato especial para comentários, de modo que diferencie da postagem
 *@param coment recebe um objeto do tipo Comentario
 */
 void manipuladorDeComentario::printaComentario(Comentario coment){
