@@ -8,7 +8,7 @@
 /**
 *@brief Método que cria todos os documentos nescessários para o funcionamento dos usuários
 *Este método têm como objetivo abrir 2 arquivos binários importantes para a aplicação sendo eles o arquivo numeroDeUsuariosCadastrados.bin (Detém o numero de usuarios da aplicação)
-* e o outro sendo usuarios.bin (Guarda os usuarios da aplicação).
+* e o outro sendo usuarios.bin (Guarda todos os usuarios da aplicação).
 */
 void manipuladorDeUsuario::criaArquivosNescessarios(){
     //Arquivo de numero de usuarios cadastrados
@@ -44,7 +44,7 @@ void manipuladorDeUsuario::criaArquivosNescessarios(){
 
 /**
 *@brief Método que cadastra um usuário no sistema, guardando suas informações no arquivo usuários.bin
-*Este método recebe um nome e uma senha, cria um objeto de usuário, adiciona as informações no objeto e salva no arquivo
+*Este método recebe um nome e uma senha, cria um objeto de usuário adicionando as informações no objeto e salva no arquivo usuarios.bin
 *@param nome Vetor de char's, recebe um nome de usuario
 *@param senha Vetor de char's, recebe uma senha de usuario
 */
@@ -103,7 +103,8 @@ void manipuladorDeUsuario::cadastrarUsuario(char nome[], char senha[]) {
 
 /**
 *@brief Método que autentica se um usuário e senha batem no sistema
-*Este método recebe um nome e uma senha, verifica no arquivo de usuários se existe um usuário que bate com o nome e a senha
+*Este método recebe um nome e uma senha, verifica no arquivo de usuários se existe um
+* usuário que bate com o nome e a senha e retorna true se foi encontrado e autentificado, e false se não foi encontrado ou não foi autenticado
 *@param nome Vetor de char's, recebe um nome de usuario
 *@param senha Vetor de char's, recebe uma senha de usuario
 *@return se o usuário foi autenticado ou não, true para sim e false para não
@@ -133,7 +134,7 @@ bool manipuladorDeUsuario::autenticarUsuario(char nome[], char senha[]) {
 
 /**@brief Método que retorna o numero de usuários
 *Este método abre o arquivo numeroDeUsuariosCadastrados.bin faz a leitura e retorna o numero de usuários no sistema
-*@return rwtorna um valor Int com o numero de usuários no arquivo
+*@return retorna um valor Int com o numero de usuários no arquivo
 */
 int manipuladorDeUsuario::numeroDeUsuarios(){
     ifstream arquivo("Arquivos/numeroDeUsuariosCadastrados.bin", ios::binary);
@@ -149,7 +150,7 @@ int manipuladorDeUsuario::numeroDeUsuarios(){
 }
 
 /**@brief Método que aumenta o numero de usuários no sistema
-*Este método abre o arquivo numeroDeUsuariosCadastrados.bin faz a leitura soma mais um e substitui no arquivo
+*Este método abre o arquivo numeroDeUsuariosCadastrados.bin faz a leitura do numero de usuários, soma mais um no numero de usuários e substitui no arquivo
 *@see numeroDeUsuarios()
 *@return valor int, true se foi adicionado com sucesso e false se não foi
 */
@@ -171,7 +172,7 @@ bool manipuladorDeUsuario::aumentarNumeroDeUsuarios(){
 }
 
 /**@brief Método que recebe um id de usuario e retorna o usuario contido no arquivo
-*Este método recebe um id de usuario, percorre o arquivo de usuários procurando algum usuário que tenha o id recebido como argumento se encontrado retorna o usuário
+*Este método recebe um id de usuario, percorre o arquivo de usuários procurando algum usuário que tenha o id recebido como argumento se encontrado retorna o usuário de id encontrado
 *@param id int numero de postagem
 *@return O usuário procurado
 */
@@ -241,7 +242,7 @@ Usuario manipuladorDeUsuario::procuraUsuarioNome(char nome[]){
 
 /**@brief Método para um usuário seguir outro usuário por id
 *Este método verifica se os usuários já se seguem, senão recebe dois id's, sendo um do seguidor e outro do seguido, acessa os documentos de seguidores e seguidos dos respectivos usuários
-*e adiciona os id's dos respectivos usuários.
+*e adiciona os id's dos respectivos usuários, assim fazendo com que o usuário do primeiro id siga o usuario do segundo id.
 *@see segue(int idSeguidor, int idSeguido)
 *@param idSeguidor um argumento inteiro
 *@param idSeguido um argumento inteiro
@@ -316,7 +317,7 @@ bool manipuladorDeUsuario::seguir(int idSeguidor, char* nomeSeguidor){
 }
 
 /**@brief Retira um numero inteiro de algum arquivo utilizado para guardar inteiros
-*Este método recebe um nome de arquivo e um inteiro, o arquivo deve ter somente inteiros, o método procura o inteiro recebido como argumento e retira no arquivo.
+*Este método recebe um nome de arquivo e um inteiro, o arquivo deve ter somente inteiros, o método procura o inteiro recebido como argumento e retira do arquivo, é utilizado para deixar de seguir principalmente.
 *@param nomeArquivo um argumento vetor de caracteres
 *@param  inteiro um argumento inteiro
 *@return True se foi retirado com sucesso e False se não
@@ -433,7 +434,8 @@ bool manipuladorDeUsuario::deixarDeSeguir(int idSeguidor, char nomeSeguido[]){
 }
 
 /**@brief Este método é utilizado para verificar se um usuário segue outro
-*Este método recebe dois id's sendo um o id do seguidor e outro do seguido, ele verifica se um id segue o outro, verificando os arquivos de seguidores e seguidos respectivos
+*Este método recebe dois id's sendo um o id do seguidor e outro do seguido, ele verifica se um id segue o outro,
+* verificando os arquivos de seguidores e seguidos respectivos, retorna true se segue e false senão
 *@param  idSeguidor um argumento inteiro
 *@see existe()
 *@param  idSeguido um argumento inteiro

@@ -9,7 +9,7 @@
 
 /**
 *@brief Método que cria todos os documentos nescessarios para o funcionamento da classe Hashtags
-*Está função têm como objetivo abrir o arquivo binário (hashtags.bin) importante para a aplicação.
+*Está função têm como objetivo abrir o arquivo binário (hashtags.bin) importante para a aplicação, pois guarda todas as hashtgas utilizadas no aplicativo.
 *@return Valor booleano, retorna true caso tenha sido criado com sucesso e false se não
 */
 bool Hashtag::criaArquivosNescessarios(){
@@ -28,7 +28,7 @@ bool Hashtag::criaArquivosNescessarios(){
 
 /**
 *@brief Método que adiciona uma hashtag no sistema, guardando suas informações no arquivo hashtags.bin
-*Este método recebe uma hashtag e adiciona no arquivo
+*Este método recebe uma hashtag e adiciona no arquivo hashtags.bin
 *@param hashtag Objeto do tipo Hashtag
 *@return Valor booleano, retorna true caso tenha sido adicionado com sucesso e false se não
 */
@@ -58,7 +58,7 @@ bool Hashtag::verificaExistencia(Hashtag hashtag){
     }else{
         while (arquivo.read((char*)&aux, sizeof(Hashtag))) {
             if(strcmp(aux.Gethashtag(), hashtag.Gethashtag()) == 0){
-                cout << "encontrado";
+                cout << "Encontrado";
                 encontrado = true;
             }
         }
@@ -73,7 +73,7 @@ bool Hashtag::verificaExistencia(Hashtag hashtag){
 
 /**
 *@brief Método que verifica o formato de uma hashtag
-*Este método recebe um texto e verifica se está em um formato válido de hashtag, sendo que deve começar com '#'
+*Este método recebe um texto e verifica se está em um formato válido de hashtag, sendo que para estar no formato correto deve começar com '#'
 *@param hashtag vetor de caracteres
 *@return Valor booleano, retorna true caso tenha sido verificado com sucesso e false se não
 */

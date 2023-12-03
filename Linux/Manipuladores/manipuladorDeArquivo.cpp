@@ -26,7 +26,7 @@ bool manipuladorDeArquivo::limparArquivoBinario(string nome){
 
 /**
 *@brief Metódo que copia um arquivo binário em outro
-*Esta Metódo recebe dois nomes de arquivos, nisto ela limpar o arquivo de origem, depois abre os arquivos sendo o de origem como leitura e o de destino como escrito, nisto ela copia cada caractere da de origem para a de destino
+*Esta Metódo recebe dois nomes de arquivos, nisto ela limpa o arquivo de origem, depois abre os arquivos sendo o de origem como leitura e o de destino como escrita , nisto ela copia cada caractere da de origem para a de destino
 *@see limparArquivoBinario(char nome[])
 *@see geraExcecao(char problema[])
 *@return true caso tenha sido copiado com sucesso e false se não foi
@@ -37,7 +37,7 @@ bool manipuladorDeArquivo::copiarArquivo(string destino, string origem){
     ofstream arquivoDestino(destino, ios::binary | ios::app);
 
     if (!arquivoDestino.is_open() || !arquivoOrigem.is_open()) {
-        geraExcecao("Não foi possível abrir os arquivos.");
+        geraExcecao("Nao foi possível abrir os arquivos.");
         return false;
     }
 
@@ -53,7 +53,7 @@ bool manipuladorDeArquivo::copiarArquivo(string destino, string origem){
 }
 /**
 *@brief Metódo que zera um arquivo binário
-*Esta Metódo recebe um nome de arquivo, nisto ela limpar o arquivo, depois adiciona o valor zero no arquivo
+*Esta Metódo recebe um nome de arquivo, nisto ela limpa o arquivo, depois adiciona o valor zero nele
 *@see limparArquivoBinario(char nome[])
 *@see geraExcecao(char problema[])
 *@return true caso tenha sido zerado com sucesso e false se não foi
